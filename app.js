@@ -11,6 +11,7 @@ const connectDb = require("./config/database");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const bookingRoutes = require('./routes/bookingRoutes'); // Import booking routes
+const venueRoutes = require('./routes/venueRoutes'); // Import venue routes
 
 var app = express();
 
@@ -28,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api/bookings', bookingRoutes); // Use the booking API routes
+app.use('/api/venues', venueRoutes); // Use the booking API routes
 
 // Connect to MongoDB Atlas
 connectDb();
